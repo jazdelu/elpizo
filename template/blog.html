@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% block title %}Elpizo's Blog{% endblock %}
+
+{% block content %}
+<body onLoad="MM_preloadImages('images/lookbook/lookbook_01_thumbnail_rollover.jpg','images/lookbook/lookbook_02_thumbnail_rollover.jpg','images/lookbook/lookbook_03_thumbnail_rollover.jpg','images/lookbook/lookbook_04_thumbnail_rollover.jpg','images/lookbook/lookbook_05_thumbnail_rollover.jpg','images/lookbook/lookbook_06_thumbnail_rollover.jpg')">
+<div id="container">
+  <div id="topRightContent"><img src="/static/images/logo.gif" width="126" height="55" alt="logo" class="displayed"></div>
+
+<div id="panel">
+  <ul>
+    <li></li>
+	<li><a href="/lookbook/">LOOKBOOK</a></li>
+<br><br>
+      <li><a href="/shop/">SHOP</a></li>
+    <li><a href="/contact/">CONTACT</a></li>
+    <li><a href="/blog/" style="color:#000000">BLOG</a></li>
+	<li></li>
+    <li></li>
+    <li></li>
+	</ul>
+</div>
+{% load staticfiles %}
+<div id="contentLarge" style='padding-top:115px;'> 
+{% for blog in blog_list %} 
+<div class = 'blog'>
+	<p><a href= '/blog/{{ blog.id }}/'>{{ blog.title|upper }}</a></p>
+	<p class = 'blog_date'>{{ blog.pub_date|date:"SHORT_DATE_FORMAT" }}</p>
+	<p class='blog_content'>
+		{% for image in blog.image_set.all  %}
+			{% if image.is_thumb %}
+			{% if blog.is_verticle %}
+			<img src = '{{ image.image.url_180x270 }}' />
+			{% else %}
+			<img src = '{{ image.image.url_260x180 }}' height = '160px' width = '240px' />
+			{% endif %}
+			{% endif %}
+		{% endfor %}
+		<a href='/blog/{{ blog.id }}/'><img src = '/static/images/read_more.jpg' class='more'></a>
+	</p>
+	<hr/>
+</div>
+{% endfor %}
+</div>
+</div>
+</body>
+{% endblock %}

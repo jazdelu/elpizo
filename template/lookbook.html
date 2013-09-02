@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block title %}Elpizo Lookbook{% endblock %}
+{% block content %}
+<body onLoad="MM_preloadImages('images/lookbook/lookbook_01_thumbnail_rollover.jpg','images/lookbook/lookbook_02_thumbnail_rollover.jpg','images/lookbook/lookbook_03_thumbnail_rollover.jpg','images/lookbook/lookbook_04_thumbnail_rollover.jpg','images/lookbook/lookbook_05_thumbnail_rollover.jpg','images/lookbook/lookbook_06_thumbnail_rollover.jpg')">
+<div id="container">
+  <div id="topRightContent"><img src="/static/images/logo.gif" width="126" height="55" alt="logo" class="displayed"></div>
+
+<div id="panel">
+  <ul>
+    <li></li>
+	<li><a href="/lookbook/" style="color:#000000">LOOKBOOK</a></li>
+<br><br>
+      <li><a href="/shop/">SHOP</a></li>
+    <li><a href="/contact/">CONTACT</a></li>
+    <li><a href="/blog/">BLOG</a></li>
+	<li></li>
+    <li></li>
+    <li></li>
+	</ul>
+</div>
+{% load staticfiles %}
+<div id="contentLarge">  
+    {% for lookbook in lookbook_list %} 
+    <div class="thumbnail"><a href="/lookbook/{{ lookbook.id }}"><img src='/upload/{{ lookbook.thumbnail }}' alt="{{ lookbook.name }}" width="370" height="555" id="Image{{ lookbook.id }}" onMouseOver="MM_swapImage('Image{{ lookbook.id }}','','/upload/{{ lookbook.rollover }}',1)" onMouseOut="MM_swapImgRestore()"></a><br>
+	</div>
+   {% endfor %}
+</div>
+</div>
+</body>
+{% endblock %}

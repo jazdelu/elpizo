@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% block title %}Lookbook {{ lookbook.name }}{% endblock %}
+{% block content %}
+<body>
+<div id="container">
+  <div id="topRightContent"><img src="/static/images/logo.gif" width="126" height="55" alt="logo" class="displayed"></div>
+
+<div id="panel">
+  <ul>
+    <li></li>
+	<li><a href="l/lookbook/" style="color:#000000">LOOKBOOK</a></li>
+<br><br>
+      <li><a href="#">SHOP</a></li>
+    <li><a href="#">CONTACT</a></li>
+    <li><a href="#">BLOG</a></li>
+	<li></li>
+    <li></li>
+    <li></li><br><br><br><br>
+    <li><a href="lookbook_content_06.html"><img src="/static/images/left_arrow.gif" width="36" height="65" alt="left_arrow" border="0"></a></li>
+	</ul>
+</div>
+<div id="contentLarge">   
+    <div class="lookbookimage"><img src="/upload/{{ lookbook.lookbook }}" width="750" height="1125" alt='{{ lookbook.name }}'><br>
+		<p>&nbsp;</p>
+	</div>
+    <!--clearboth-->
+	<br class="clearboth">
+<div id="panelleft">
+  <ul>
+    <li style="color:#000000">NO. 1<br>
+      <br>
+      SILVER HIGH COLLAR TOP<br>
+      NAVY VELVET DRESS<br>
+    NAVY
+    WOOL COAT</li>
+<br><br><br><br><br><br>
+<li><a href="lookbook_content_02.html"><img src="/static/images/right_arrow.gif" width="36" height="65" alt="right_arrow" border="0"></a></li>
+  </ul>
+</div>
+</div>
+</div>
+</body>
+{% endblock %}

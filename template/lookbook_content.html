@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% block title %}Lookbook {{ lookbook.name }}{% endblock %}
+{% block content %}
+<body>
+<div id="container">
+  <div id="topRightContent"><img src="/static/images/logo.gif" width="126" height="55" alt="logo" class="displayed"></div>
+
+<div id="panel">
+  <ul>
+    <li></li>
+	<li><a href="/lookbook/" style="color:#000000">LOOKBOOK</a></li>
+<br><br>
+      <li><a href="/shop/">SHOP</a></li>
+    <li><a href="/contact/">CONTACT</a></li>
+    <li><a href="/blog/">BLOG</a></li>
+	<li></li>
+    <li></li>
+    <li></li><br><br><br><br>
+    {% if prev != 0 %}
+    <li><a href="/lookbook/{{ prev }}/"><img src="/static/images/left_arrow.gif" width="36" height="65" alt="left_arrow" border="0"></a></li>
+    {% endif %}
+	</ul>
+</div>
+<div id="contentLarge">   
+    <div class="lookbookimage"><img src="/upload/{{ lookbook.lookbook }}" width="750" height="1125" alt="lookbook.name"><br>
+		<p>&nbsp;</p>
+	</div>
+    <!--clearboth-->
+	<br class="clearboth">
+<div id="panelleft">
+  <ul>
+    <li style="min-height:185px;color:#000000; font:bold 12px Arial; width:180px;">{{ lookbook.name|upper }}<br>
+      {{ lookbook.description|upper|linebreaksbr }}
+      </li>
+
+{% if next != 0 %}
+<li><a href="/lookbook/{{ next }}/"><img src="/static/images/right_arrow.gif" width="36" height="65" alt="right_arrow" border="0"></a></li>
+{% endif %}
+  </ul>
+</div>
+</div>
+</div>
+</body>
+{% endblock %}
