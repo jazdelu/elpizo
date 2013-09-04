@@ -34,6 +34,9 @@ td{
 	padding:5px 10px;
 	border: 1px solid grey;
 }
+img{
+   border:0px; 
+}
 IMG.displayed {
     display: block;
     margin-left: auto;
