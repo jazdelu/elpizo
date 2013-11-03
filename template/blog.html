@@ -4,7 +4,7 @@
 {% block content %}
 <body onLoad="MM_preloadImages('images/lookbook/lookbook_01_thumbnail_rollover.jpg','images/lookbook/lookbook_02_thumbnail_rollover.jpg','images/lookbook/lookbook_03_thumbnail_rollover.jpg','images/lookbook/lookbook_04_thumbnail_rollover.jpg','images/lookbook/lookbook_05_thumbnail_rollover.jpg','images/lookbook/lookbook_06_thumbnail_rollover.jpg')">
 <div id="container">
-  <div id="topRightContent"><img src="/static/images/logo.gif" width="126" height="55" alt="logo" class="displayed"></div>
+  <div id="topRightContent"><a href='/'><img src="/static/images/logo.gif" width="126" height="55" alt="logo" class="displayed"></a></div>
 
 <div id="panel">
   <ul>
@@ -20,7 +20,11 @@
 	</ul>
 </div>
 {% load staticfiles %}
-<div id="contentLarge" style='padding-top:115px;'> 
+<div id="contentLarge" style='padding-top:60px;'> 
+<div class='video_panel' style ='margin-bottom:20px;'>
+<embed src="http://player.youku.com/player.php/sid/XNjA3MDA5ODky/v.swf" allowFullScreen="true" quality="high" width="480" height="360" align="middle" allowScriptAccess="always" type="application/x-shockwave-flash"></embed>
+<embed src="http://player.youku.com/player.php/sid/XNjA3MDA5ODMy/v.swf" allowFullScreen="true" quality="high" width="480" height="360" align="middle" allowScriptAccess="always" type="application/x-shockwave-flash"></embed>
+</div>
 {% for blog in blog_list %} 
 <div class = 'blog'>
 	<p><a href= '/blog/{{ blog.id }}/'>{{ blog.title|upper }}</a></p>

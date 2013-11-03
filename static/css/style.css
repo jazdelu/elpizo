@@ -1,13 +1,15 @@
 /*General properties*/
 body{
-	background-color: #FFFFFF;
+	background-color:#ffffff;
 	margin:auto;
 	/*margin-left: 0px;
 	margin-top: 0px;
 	margin-right: 0px;
 	margin-bottom: 0px;*/
 }
-
+.center{
+      background-color:#e4e4e4;
+}
 H1{
 	font: bold 24px Arial;
 	color: #babcbb;
